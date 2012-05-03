@@ -9,6 +9,7 @@ enum ObjectType {
 
 class GuiObject {
 public:
+    bool refresh;
     GuiObject *parent;
     ObjectType type;
 

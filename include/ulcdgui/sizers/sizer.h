@@ -1,7 +1,7 @@
 #ifndef SIZER_H
 #define SIZER_H
 
-#include <list>
+#include <vector>
 #include "ulcdgui/guiobject.h"
 
 class Surface;
@@ -9,7 +9,8 @@ class GuiEvent;
 
 class Sizer : public GuiObject {
 protected:
-    std::list<GuiObject*> objects;
+    std::vector<GuiObject*> objects;
+    int last_w, last_h;
 
 public:
     Sizer();

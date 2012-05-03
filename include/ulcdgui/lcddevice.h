@@ -2,8 +2,10 @@
 #define DEVICE_H
 
 #include <ulcd_driver.h>
-#include "guiexception.h"
-#include "rendering/surface.h"
+#include "ulcdgui/guiexception.h"
+#include "ulcdgui/rendering/surface.h"
+
+class GuiEvent;
 
 class LCDDevice {
 protected:
@@ -14,7 +16,7 @@ public:
     ~LCDDevice();
 
     void clearScreen();
-
+    bool getEvent(GuiEvent *ev);
     Surface* getSurface();
 };
 

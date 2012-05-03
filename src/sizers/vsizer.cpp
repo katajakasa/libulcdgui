@@ -6,6 +6,11 @@
 #include "ulcdgui/components/component.h"
 
 void VSizer::draw(Surface *s) {
+    this->last_w = s->w;
+    this->last_h = s->h;
+    if(!this->refresh) return;
+    this->refresh = false;
+
     int c = this->objects.size();
     int ppc = s->h / c;
 
@@ -13,13 +18,16 @@ void VSizer::draw(Surface *s) {
     for(GuiObject *obj : this->objects) {
         Surface *sub = s->getSubSurface(0, y, s->w, ppc);
         y += ppc;
+        if(!obj->refresh) continue;
 
         if(obj->type == OBJECT_COMPONENT) {
             Component *com = (Component*)obj;
             com->draw(sub);
+            com->refresh = false;
         } else {
             Sizer *sizer = (Sizer*)obj;
             sizer->draw(sub);
+            sizer->refresh = false;
         }
 
         delete sub;
@@ -27,5 +35,16 @@ void VSizer::draw(Surface *s) {
 }
 
 void VSizer::handle_event(GuiEvent *ev) {
-    return;
+    int c = this->objects.size();
+    int ppc = this->last_h / c;
+    int pos = ev->y / ppc;
+
+    GuiObject *obj = this->objects.at(pos);
+    if(obj->type == OBJECT_COMPONENT) {
+        Component *com = (Component*)obj;
+        com->handle_event(ev);
+    } else {
+        Sizer *sizer = (Sizer*)obj;
+        sizer->handle_event(ev);
+    }
 }
