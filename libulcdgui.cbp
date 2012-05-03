@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="libulcdgui" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Release">
+				<Option output="lib\ulcdgui" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="" />
+				<Option object_output="obj\" />
+				<Option type="2" />
+				<Option compiler="gcc" />
+				<Option createDefFile="1" />
+				<Compiler>
+					<Add option="-O2" />
+					<Add option="-Wall" />
+				</Compiler>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-std=c++0x" />
+			<Add directory="..\libulcd32pt\include" />
+			<Add directory="include" />
+		</Compiler>
+		<Unit filename="include\ulcdgui\components\button.h" />
+		<Unit filename="include\ulcdgui\components\component.h" />
+		<Unit filename="include\ulcdgui\events\event.h" />
+		<Unit filename="include\ulcdgui\frame.h" />
+		<Unit filename="include\ulcdgui\guiexception.h" />
+		<Unit filename="include\ulcdgui\guiobject.h" />
+		<Unit filename="include\ulcdgui\lcddevice.h" />
+		<Unit filename="include\ulcdgui\rendering\color.h" />
+		<Unit filename="include\ulcdgui\rendering\surface.h" />
+		<Unit filename="include\ulcdgui\sizers\hsizer.h" />
+		<Unit filename="include\ulcdgui\sizers\sizer.h" />
+		<Unit filename="include\ulcdgui\sizers\vsizer.h" />
+		<Unit filename="src\components\button.cpp" />
+		<Unit filename="src\components\component.cpp" />
+		<Unit filename="src\frame.cpp" />
+		<Unit filename="src\guiobject.cpp" />
+		<Unit filename="src\lcddevice.cpp" />
+		<Unit filename="src\rendering\color.cpp" />
+		<Unit filename="src\rendering\surface.cpp" />
+		<Unit filename="src\sizers\hsizer.cpp" />
+		<Unit filename="src\sizers\sizer.cpp" />
+		<Unit filename="src\sizers\vsizer.cpp" />
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
