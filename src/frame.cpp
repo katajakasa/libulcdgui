@@ -10,6 +10,7 @@ Frame::~Frame() {
     if(this->base_sizer) {
         delete this->base_sizer;
     }
+    this->device->clearScreen();
 }
 
 void Frame::run() {

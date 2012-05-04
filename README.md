@@ -9,3 +9,79 @@ Requires the libulcd32pt library.
 License
 -------
 MIT. Read LICENSE for more detailed information.
+
+Example
+-------
+
+    #include <string>
+    #include <iostream>
+
+    #include <ulcdgui/frame.h>
+    #include <ulcdgui/lcddevice.h>
+    #include <ulcdgui/guiexception.h>
+    #include <ulcdgui/components/button.h>
+    #include <ulcdgui/sizers/hsizer.h>
+    #include <ulcdgui/sizers/vsizer.h>
+
+    bool run = true;
+
+    // This is a callback function for quit button.
+    void quit(GuiEvent *ev, void *userdata) {
+        run = false;
+    }
+
+    int main() {
+        // Initialize device
+        LCDDevice *dev;
+        try {
+            dev = new LCDDevice(2); // On windows, COM3.
+        } catch(GuiException &ex) {
+            std::cout << ex.getText() << std::endl;
+            return 0;
+        }
+
+        // Create a frame. Fills the whole screen.
+        Frame *frame = new Frame(dev);
+
+        // Now create some components (buttons, yay!)
+        Button *b1 = new Button("Button 1");
+        Button *b2 = new Button("Button 2");
+        Button *b3 = new Button("Button 3");
+        Button *b4 = new Button("Quit");
+
+        // Connect a quit function to button b4
+        b4->clicked.connect(sigc::ptr_fun(quit));
+
+        // Create a vertical sizer, and add 3 buttons in it
+        VSizer *vs = new VSizer;
+        vs->addComponent(b2);
+        vs->addComponent(b3);
+        vs->addComponent(b4);
+
+        // Create a horizontal sizer, and add button 1 and our vertical sizer in it
+        HSizer *hs = new HSizer;
+        hs->addComponent(b1);
+        hs->addComponent(vs);
+
+        // Set horizontal sizer as root sizer
+        frame->setBaseSizer(hs);
+
+        // Run the gui.
+        // A single run() call will draw the gui and then check for touch events
+        // Run() may throw some surprises :)
+        while(run) {
+            try {
+                frame->run();
+            } catch(GuiException &ex) {
+                std::cout << "Error while running: " << ex.getText() << std::endl;
+                return 0;
+            }
+        }
+
+        // Delete frame and device objects.
+        // Deleting frame will kill all objects that were added to it
+        // eh. buttons, sizers, ...
+        delete frame;
+        delete dev;
+        return 0;
+    }
