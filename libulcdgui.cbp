@@ -16,7 +16,6 @@
 				<Compiler>
 					<Add option="-O2" />
 					<Add option="-Wall" />
-					<Add option="-g" />
 				</Compiler>
 			</Target>
 		</Build>
