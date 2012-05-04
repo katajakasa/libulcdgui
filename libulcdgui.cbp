@@ -16,6 +16,7 @@
 				<Compiler>
 					<Add option="-O2" />
 					<Add option="-Wall" />
+					<Add option="-g" />
 				</Compiler>
 			</Target>
 		</Build>
@@ -26,6 +27,7 @@
 		</Compiler>
 		<Unit filename="include\ulcdgui\components\button.h" />
 		<Unit filename="include\ulcdgui\components\component.h" />
+		<Unit filename="include\ulcdgui\drawable.h" />
 		<Unit filename="include\ulcdgui\events\event.h" />
 		<Unit filename="include\ulcdgui\frame.h" />
 		<Unit filename="include\ulcdgui\guiexception.h" />
