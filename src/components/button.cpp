@@ -42,5 +42,6 @@ void Button::handle_event(GuiEvent *ev) {
             this->update();
         }
         this->state = STATE_UP;
+        this->clicked.emit(ev, this->user_data);
     }
 }

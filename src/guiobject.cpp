@@ -1,8 +1,8 @@
 #include "ulcdgui/guiobject.h"
 
-GuiObject::GuiObject(ObjectType t) {
-    this->type = t;
+GuiObject::GuiObject() {
     this->refresh = true;
+    this->parent = 0;
 }
 
 GuiObject::~GuiObject() {}

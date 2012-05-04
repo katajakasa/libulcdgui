@@ -3,6 +3,7 @@
 
 #include <string>
 #include "ulcdgui/components/component.h"
+#include <sigc++/signal.h>
 
 class Surface;
 class GuiEvent;
@@ -18,6 +19,8 @@ protected:
     std::string text;
 
 public:
+    sigc::signal<void, GuiEvent*, void*> clicked;
+
     Button(std::string text) : Component() {
         this->state = STATE_UP;
         this->text = text;

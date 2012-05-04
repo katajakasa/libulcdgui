@@ -1,7 +1,6 @@
 #include "ulcdgui/components/component.h"
 
-Component::Component() : GuiObject(OBJECT_COMPONENT) {}
-Component::~Component() {}
+Component::Component() : Drawable() {}
 
 void Component::setUserData(void *data) {
     this->user_data = data;

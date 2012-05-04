@@ -2,24 +2,18 @@
 #define SIZER_H
 
 #include <vector>
-#include "ulcdgui/guiobject.h"
+#include "ulcdgui/drawable.h"
 
-class Surface;
-class GuiEvent;
-
-class Sizer : public GuiObject {
+class Sizer : public Drawable {
 protected:
-    std::vector<GuiObject*> objects;
+    std::vector<Drawable*> objects;
     int last_w, last_h;
 
 public:
     Sizer();
     virtual ~Sizer();
 
-    void addComponent(GuiObject *obj);
-
-    virtual void draw(Surface *s) = 0;
-    virtual void handle_event(GuiEvent *ev) = 0;
+    void addComponent(Drawable *obj);
 };
 
 #endif

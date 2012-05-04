@@ -1,14 +1,14 @@
 #include "ulcdgui/sizers/sizer.h"
 
-Sizer::Sizer() : GuiObject(OBJECT_SIZER) {}
+Sizer::Sizer() : Drawable() {}
 
 Sizer::~Sizer() {
-    for(GuiObject *obj : this->objects) {
+    for(Drawable *obj : this->objects) {
         delete obj;
     }
 }
 
-void Sizer::addComponent(GuiObject *obj) {
+void Sizer::addComponent(Drawable *obj) {
     obj->setParent(this);
     this->objects.push_back(obj);
 }

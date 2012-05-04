@@ -1,19 +1,14 @@
 #ifndef OBJECT_H
 #define OBJECT_H
 
-enum ObjectType {
-    OBJECT_COMPONENT,
-    OBJECT_SIZER,
-    OBJECT_FRAME,
-};
+#include <sigc++/trackable.h>
 
-class GuiObject {
+class GuiObject  : public sigc::trackable {
 public:
     bool refresh;
     GuiObject *parent;
-    ObjectType type;
 
-    GuiObject(ObjectType t);
+    GuiObject();
     virtual ~GuiObject();
 
     virtual void setParent(GuiObject *parent);

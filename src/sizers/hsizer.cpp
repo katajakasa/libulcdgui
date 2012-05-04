@@ -15,21 +15,16 @@ void HSizer::draw(Surface *s) {
     int ppc = s->w / c;
 
     int x = 0;
-    for(GuiObject *obj : this->objects) {
-        Surface *sub = s->getSubSurface(x, 0, ppc, s->h);
-        x += ppc;
-        if(!obj->refresh) continue;
-
-        if(obj->type == OBJECT_COMPONENT) {
-            Component *com = (Component*)obj;
-            com->draw(sub);
-            com->refresh = false;
-        } else {
-            Sizer *sizer = (Sizer*)obj;
-            sizer->draw(sub);
-            sizer->refresh = false;
+    for(Drawable *obj : this->objects) {
+        if(!obj->refresh) {
+            x += ppc;
+            continue;
         }
 
+        Surface *sub = s->getSubSurface(x, 0, ppc, s->h);
+        x += ppc;
+        obj->draw(sub);
+        obj->refresh = false;
         delete sub;
     }
 }
@@ -38,13 +33,5 @@ void HSizer::handle_event(GuiEvent *ev) {
     int c = this->objects.size();
     int ppc = this->last_w / c;
     int pos = ev->x / ppc;
-
-    GuiObject *obj = this->objects.at(pos);
-    if(obj->type == OBJECT_COMPONENT) {
-        Component *com = (Component*)obj;
-        com->handle_event(ev);
-    } else {
-        Sizer *sizer = (Sizer*)obj;
-        sizer->handle_event(ev);
-    }
+    this->objects.at(pos)->handle_event(ev);
 }

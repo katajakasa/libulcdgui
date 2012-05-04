@@ -1,6 +1,6 @@
 #include "ulcdgui/frame.h"
 
-Frame::Frame(LCDDevice *dev) : GuiObject(OBJECT_FRAME) {
+Frame::Frame(LCDDevice *dev) : GuiObject() {
     this->device = dev;
     this->base_sizer = 0;
     this->device->clearScreen();
