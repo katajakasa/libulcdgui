@@ -1,8 +1,8 @@
 #include "ulcdgui/lcddevice.h"
 #include "ulcdgui/events/event.h"
 
-LCDDevice::LCDDevice(int port) {
-    this->dev = ulcd_init(port);
+LCDDevice::LCDDevice(std::string device) {
+    this->dev = ulcd_init(device.c_str());
     if(!this->dev) {
         throw GuiException(ulcd_get_error_str());
     }

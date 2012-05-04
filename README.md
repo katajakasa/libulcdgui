@@ -54,14 +54,14 @@ Example
 
         // Create a vertical sizer, and add 3 buttons in it
         VSizer *vs = new VSizer;
-        vs->addComponent(b2);
-        vs->addComponent(b3);
-        vs->addComponent(b4);
+        vs->add(b2);
+        vs->add(b3);
+        vs->add(b4);
 
         // Create a horizontal sizer, and add button 1 and our vertical sizer in it
         HSizer *hs = new HSizer;
-        hs->addComponent(b1);
-        hs->addComponent(vs);
+        hs->add(b1);
+        hs->add(vs);
 
         // Set horizontal sizer as root sizer
         frame->setBaseSizer(hs);

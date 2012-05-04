@@ -27,7 +27,7 @@ public:
     void line(int x0, int y0, int x1, int y1);
     void rect(int x0, int y0, int x1, int y1);
     void circle(int x, int y, int radius);
-    void blit(int x, int y, int w, int h, char *data);
+    void blit(int x, int y, int w, int h, const char *data);
     void text(std::string text, int x, int y, int font);
     void setPen(PenType p);
     void setColor(Color c);

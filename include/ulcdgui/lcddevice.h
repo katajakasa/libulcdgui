@@ -12,7 +12,7 @@ protected:
     ulcd_dev *dev;
 
 public:
-    LCDDevice(int port);
+    LCDDevice(std::string device);
     ~LCDDevice();
 
     void clearScreen();

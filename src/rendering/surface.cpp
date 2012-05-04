@@ -47,8 +47,8 @@ void Surface::circle(int x, int y, int radius) {
     }
 }
 
-void Surface::blit(int x, int y, int w, int h, char *data) {
-    if(!ulcd_blit(this->dev, this->x+x, this->y+y, w, h, (unsigned char*)data)) {
+void Surface::blit(int x, int y, int w, int h, const char *data) {
+    if(!ulcd_blit(this->dev, this->x+x, this->y+y, w, h, data)) {
         throw GuiException(ulcd_get_error_str());
     }
 }
