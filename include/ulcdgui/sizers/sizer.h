@@ -13,7 +13,9 @@ public:
     Sizer();
     virtual ~Sizer();
 
-    void addComponent(Drawable *obj);
+    void add(Drawable *obj);
+    void remove(unsigned int i);
+    int count();
 };
 
 #endif
