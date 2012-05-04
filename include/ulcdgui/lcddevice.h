@@ -18,6 +18,12 @@ public:
     void clearScreen();
     bool getEvent(GuiEvent *ev);
     Surface* getSurface();
+
+    void setVolume(int level);
+    void mute();
+    void unmute();
+    void playAudio(std::string file);
+    void stopAudio();
 };
 
 #endif

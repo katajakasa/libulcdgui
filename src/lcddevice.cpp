@@ -42,3 +42,35 @@ bool LCDDevice::getEvent(GuiEvent *ev) {
     }
     return false;
 }
+
+void LCDDevice::setVolume(int level) {
+    if(level < ULCD_VOLUME_MIN) level = ULCD_VOLUME_MIN;
+    if(level > ULCD_VOLUME_MAX) level = ULCD_VOLUME_MAX;
+    if(!ulcd_set_volume(this->dev, level)) {
+        throw GuiException(ulcd_get_error_str());
+    }
+}
+
+void LCDDevice::mute() {
+    if(!ulcd_set_volume(this->dev, ULCD_VOLUME_MUTE)) {
+        throw GuiException(ulcd_get_error_str());
+    }
+}
+
+void LCDDevice::unmute() {
+    if(!ulcd_set_volume(this->dev, ULCD_VOLUME_UNMUTE)) {
+        throw GuiException(ulcd_get_error_str());
+    }
+}
+
+void LCDDevice::playAudio(std::string file) {
+    if(!ulcd_audio_play(this->dev, file.c_str())) {
+        throw GuiException(ulcd_get_error_str());
+    }
+}
+
+void LCDDevice::stopAudio() {
+    if(!ulcd_audio_stop(this->dev)) {
+        throw GuiException(ulcd_get_error_str());
+    }
+}
