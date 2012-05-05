@@ -32,6 +32,7 @@ void HSizer::draw(Surface *s) {
 void HSizer::handle_event(GuiEvent *ev) {
     int c = this->objects.size();
     int ppc = this->last_w / c;
-    int pos = ev->x / ppc;
+    unsigned int pos = ev->x / ppc;
+    if(pos == this->objects.size()) pos--;
     this->objects.at(pos)->handle_event(ev);
 }

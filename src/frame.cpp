@@ -3,7 +3,12 @@
 Frame::Frame(LCDDevice *dev) : GuiObject() {
     this->device = dev;
     this->base_sizer = 0;
-    this->device->clearScreen();
+
+    // Clear screen + set background color
+    Surface *s = this->device->getSurface();
+    s->setColor(Color(0.97, 0.97, 0.97));
+    s->rect(0, 0, s->w, s->h);
+    delete s;
 }
 
 Frame::~Frame() {

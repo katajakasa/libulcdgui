@@ -27,6 +27,7 @@
 		</Compiler>
 		<Unit filename="include\ulcdgui\components\button.h" />
 		<Unit filename="include\ulcdgui\components\component.h" />
+		<Unit filename="include\ulcdgui\components\slider.h" />
 		<Unit filename="include\ulcdgui\drawable.h" />
 		<Unit filename="include\ulcdgui\events\event.h" />
 		<Unit filename="include\ulcdgui\frame.h" />
@@ -40,6 +41,7 @@
 		<Unit filename="include\ulcdgui\sizers\vsizer.h" />
 		<Unit filename="src\components\button.cpp" />
 		<Unit filename="src\components\component.cpp" />
+		<Unit filename="src\components\slider.cpp" />
 		<Unit filename="src\frame.cpp" />
 		<Unit filename="src\guiobject.cpp" />
 		<Unit filename="src\lcddevice.cpp" />

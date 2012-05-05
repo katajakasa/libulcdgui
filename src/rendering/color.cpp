@@ -16,7 +16,7 @@ Color::Color(int r, int g, int b) {
     this->b = (b <= 0) ? 0.0 : (255/b);
 }
 
-Color::Color(float r, float g, float b) {
+Color::Color(double r, double g, double b) {
     r = (r < 0.0) ? 0.0 : r;
     g = (g < 0.0) ? 0.0 : g;
     b = (b < 0.0) ? 0.0 : b;

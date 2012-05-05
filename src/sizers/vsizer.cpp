@@ -32,6 +32,7 @@ void VSizer::draw(Surface *s) {
 void VSizer::handle_event(GuiEvent *ev) {
     int c = this->objects.size();
     int ppc = this->last_h / c;
-    int pos = ev->y / ppc;
+    unsigned int pos = ev->y / ppc;
+    if(pos == this->objects.size()) pos--;
     this->objects.at(pos)->handle_event(ev);
 }
