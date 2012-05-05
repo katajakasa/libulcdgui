@@ -30,5 +30,4 @@ public:
     void handle_event(GuiEvent *ev);
 };
 
-
 #endif

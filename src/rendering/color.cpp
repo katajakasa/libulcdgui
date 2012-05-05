@@ -1,6 +1,13 @@
 #include "ulcdgui/rendering/color.h"
 #include <ulcd_driver.h>
 
+const Color Color::BACKGROUND = Color(0.97, 0.97, 0.97);
+const Color Color::FOREGROUND = Color(0.85, 0.85, 0.85);
+const Color Color::ACTIVE = Color(0.70, 0.70, 0.70);
+const Color Color::OUTERBORDER = Color(0.3, 0.3, 0.3);
+const Color Color::INNERBORDER = Color(0.6, 0.6, 0.6);
+const Color Color::TEXT = Color(0.1, 0.1, 0.1);
+
 Color::Color() {
     this->r = 0;
     this->g = 0;

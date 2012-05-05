@@ -36,8 +36,11 @@ bool LCDDevice::getEvent(GuiEvent *ev) {
             break;
         }
 
-        ev->x = uev.x;
-        ev->y = uev.y;
+        ev->global_x = uev.x;
+        ev->local_x = uev.x;
+        ev->global_y = uev.y;
+        ev->local_y = uev.y;
+        ev->emitter = 0;
         return true;
     }
     return false;

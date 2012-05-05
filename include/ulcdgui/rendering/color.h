@@ -19,6 +19,16 @@ public:
     float getR() { return this->r; }
     float getG() { return this->g; }
     float getB() { return this->b; }
+
+    static const Color BACKGROUND;
+    static const Color FOREGROUND;
+    static const Color INNERBORDER;
+    static const Color OUTERBORDER;
+    static const Color ACTIVE;
+    static const Color TEXT;
 };
+
+
+
 
 #endif

@@ -3,12 +3,6 @@
 
 #include <sigc++/trackable.h>
 
-enum Alignment {
-    ALIGN_VERTICAL = 0,
-    ALIGN_HORIZONTAL,
-    ALIGN_AUTO
-};
-
 class GuiObject  : public sigc::trackable {
 public:
     bool refresh;

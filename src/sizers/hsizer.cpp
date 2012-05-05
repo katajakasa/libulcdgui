@@ -30,9 +30,14 @@ void HSizer::draw(Surface *s) {
 }
 
 void HSizer::handle_event(GuiEvent *ev) {
+    // Find the object the event belongs to
     int c = this->objects.size();
     int ppc = this->last_w / c;
-    unsigned int pos = ev->x / ppc;
+    unsigned int pos = ev->local_x / ppc;
     if(pos == this->objects.size()) pos--;
-    this->objects.at(pos)->handle_event(ev);
+
+    // Get object, change event a bit and handle it
+    Drawable *obj = this->objects.at(pos);
+    ev->setParams(obj, ppc*pos, 0);
+    obj->handle_event(ev);
 }

@@ -6,7 +6,7 @@ Frame::Frame(LCDDevice *dev) : GuiObject() {
 
     // Clear screen + set background color
     Surface *s = this->device->getSurface();
-    s->setColor(Color(0.97, 0.97, 0.97));
+    s->setColor(Color::BACKGROUND);
     s->rect(0, 0, s->w, s->h);
     delete s;
 }

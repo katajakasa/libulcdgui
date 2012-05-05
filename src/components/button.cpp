@@ -8,22 +8,22 @@ void Button::draw(Surface *sf) {
 
     // Background
     if(this->state == STATE_UP) {
-        sf->setColor(Color(0.9f, 0.9f, 0.9f));
+        sf->setColor(Color::FOREGROUND);
         sf->rect(2, 2, sf->w-2, sf->h-2);
     } else {
-        sf->setColor(Color(0.7f, 0.7f, 0.7f));
+        sf->setColor(Color::ACTIVE);
         sf->rect(2, 2, sf->w-2, sf->h-2);
     }
 
     // Borders
     sf->setPen(PEN_WIREFRAME);
-    sf->setColor(Color(0.7f, 0.7f, 0.7f));
+    sf->setColor(Color::OUTERBORDER);
     sf->rect(2, 2, sf->w-2, sf->h-2);
-    sf->setColor(Color(0.65f, 0.65f, 0.65f));
+    sf->setColor(Color::INNERBORDER);
     sf->rect(3, 3, sf->w-3, sf->h-3);
 
     // Draw text
-    sf->setColor(Color(0.1f, 0.1f, 0.1f));
+    sf->setColor(Color::TEXT);
     int tw = text.length() * 8;
     int th = 12;
     int txm = (sf->w - tw) / 2;
