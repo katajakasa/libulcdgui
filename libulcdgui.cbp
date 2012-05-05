@@ -23,6 +23,7 @@
 			<Add option="-std=c++0x" />
 			<Add directory="..\libulcd32pt\include" />
 			<Add directory="include" />
+			<Add directory="C:\MinGW32\include\sigc++-2.0" />
 		</Compiler>
 		<Unit filename="include\ulcdgui\components\button.h" />
 		<Unit filename="include\ulcdgui\components\component.h" />
