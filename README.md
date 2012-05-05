@@ -34,7 +34,7 @@ Example
         // Initialize device
         LCDDevice *dev;
         try {
-            dev = new LCDDevice(2); // On windows, COM3.
+            dev = new LCDDevice("COM3"); // On linux eg. "/dev/ttyUSB0" etc.
         } catch(GuiException &ex) {
             std::cout << ex.getText() << std::endl;
             return 0;
