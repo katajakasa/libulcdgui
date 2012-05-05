@@ -26,7 +26,15 @@ Surface* Surface::getSubSurface(int x, int y, int w, int h) {
 }
 
 void Surface::pixel(int x, int y) {
+    if(!ulcd_draw_pixel(this->dev, this->x+x, this->y+y, this->c.getNativeColor())) {
+        throw GuiException(ulcd_get_error_str());
+    }
+}
 
+void Surface::ellipse(int x, int y, int xrad, int yrad) {
+    if(!ulcd_draw_ellipse(this->dev, this->x+x, this->y+y, xrad, yrad, this->c.getNativeColor())) {
+        throw GuiException(ulcd_get_error_str());
+    }
 }
 
 void Surface::line(int x0, int y0, int x1, int y1) {
@@ -51,6 +59,10 @@ void Surface::blit(int x, int y, int w, int h, const char *data) {
     if(!ulcd_blit(this->dev, this->x+x, this->y+y, w, h, data)) {
         throw GuiException(ulcd_get_error_str());
     }
+}
+
+Color Surface::getPixel(int x, int y) {
+    return Color(ulcd_read_pixel(this->dev, x, y));
 }
 
 void Surface::text(std::string text, int x, int y, int font) {

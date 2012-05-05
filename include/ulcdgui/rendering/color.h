@@ -14,6 +14,7 @@ public:
     Color();
     Color(int r, int g, int b);
     Color(float r, float g, float b);
+    Color(uint16_t c);
 
     float getR() { return this->r; }
     float getG() { return this->g; }
