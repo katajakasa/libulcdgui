@@ -22,6 +22,20 @@ Todo
 * Some sort of draw buffer. Since the device has some sort of receive buffer, 
   we could try to keep that filled with stuff to do. ATM the library just 
   performs an operation and then waits for an ACK.
+* Component: Progressbar
+* Component: IconButton
+* Component: TextArea
+* Component: Textfield
+* Component: Passwordfield
+* Component: IPAddressField
+* Component: Panel
+* Component: TextLabel
+* Sizer: GridSizer (size (n,n) )
+* Sizer: FormSizer (size (2,n), label on top, borders)
+* Object: Timer
+* Dialog frame
+* Virtual keyboard dialog (like in cellphones)
+* Some sort of notification/confirmation/error dialog
 
 Example
 -------
