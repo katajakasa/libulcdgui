@@ -13,6 +13,8 @@ public:
     Sizer();
     virtual ~Sizer();
 
+    virtual void precalc_layout(int x, int y, int w, int h) = 0;
+
     void add(Drawable *obj);
     void remove(unsigned int i);
     int count();

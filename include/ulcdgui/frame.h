@@ -19,6 +19,7 @@ public:
     void run();
     void setBaseSizer(Sizer *sizer);
     void update();
+    void layout();
 };
 
 #endif

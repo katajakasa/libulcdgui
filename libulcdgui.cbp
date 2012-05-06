@@ -28,12 +28,13 @@
 		<Unit filename="include\ulcdgui\components\button.h" />
 		<Unit filename="include\ulcdgui\components\component.h" />
 		<Unit filename="include\ulcdgui\components\slider.h" />
-		<Unit filename="include\ulcdgui\drawable.h" />
 		<Unit filename="include\ulcdgui\events\event.h" />
 		<Unit filename="include\ulcdgui\frame.h" />
-		<Unit filename="include\ulcdgui\guiexception.h" />
-		<Unit filename="include\ulcdgui\guiobject.h" />
 		<Unit filename="include\ulcdgui\lcddevice.h" />
+		<Unit filename="include\ulcdgui\misc\cache.h" />
+		<Unit filename="include\ulcdgui\misc\drawable.h" />
+		<Unit filename="include\ulcdgui\misc\guiexception.h" />
+		<Unit filename="include\ulcdgui\misc\guiobject.h" />
 		<Unit filename="include\ulcdgui\rendering\color.h" />
 		<Unit filename="include\ulcdgui\rendering\surface.h" />
 		<Unit filename="include\ulcdgui\sizers\hsizer.h" />
@@ -43,8 +44,9 @@
 		<Unit filename="src\components\component.cpp" />
 		<Unit filename="src\components\slider.cpp" />
 		<Unit filename="src\frame.cpp" />
-		<Unit filename="src\guiobject.cpp" />
 		<Unit filename="src\lcddevice.cpp" />
+		<Unit filename="src\misc\cache.cpp" />
+		<Unit filename="src\misc\guiobject.cpp" />
 		<Unit filename="src\rendering\color.cpp" />
 		<Unit filename="src\rendering\surface.cpp" />
 		<Unit filename="src\sizers\hsizer.cpp" />
