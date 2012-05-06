@@ -3,8 +3,9 @@
 
 #include <list>
 #include <string>
-#include <ulcd_driver.h>
 #include "ulcdgui/rendering/color.h"
+
+typedef struct ulcd_dev ulcd_dev;
 
 enum PenType {
     PEN_SOLID = 0x00,

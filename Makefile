@@ -21,9 +21,11 @@ CP=cp
 # Stuff for compilation
 FILES := \
     src/lcddevice.cpp \
-    src/guiobject.cpp \
     src/frame.cpp \
+    src/misc/guiobject.cpp \
+    src/misc/cache.cpp \
     src/components/button.cpp \
+    src/components/slider.cpp \
     src/components/component.cpp \
     src/rendering/color.cpp \
     src/rendering/surface.cpp \
