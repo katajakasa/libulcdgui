@@ -1,11 +1,11 @@
 #ifndef FRAME_H
 #define FRAME_H
 
-#include "lcddevice.h"
-#include "sizers/sizer.h"
-#include "components/component.h"
-#include "events/event.h"
-#include "guiobject.h"
+#include "ulcdgui/lcddevice.h"
+#include "ulcdgui/sizers/sizer.h"
+#include "ulcdgui/components/component.h"
+#include "ulcdgui/events/event.h"
+#include "ulcdgui/misc/guiobject.h"
 
 class Frame : public GuiObject {
 protected:

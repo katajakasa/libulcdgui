@@ -2,7 +2,7 @@
 #define SIZER_H
 
 #include <vector>
-#include "ulcdgui/drawable.h"
+#include "ulcdgui/misc/drawable.h"
 
 class Sizer : public Drawable {
 protected:

@@ -1,7 +1,7 @@
 #ifndef COMPONENT_H
 #define COMPONENT_H
 
-#include "ulcdgui/drawable.h"
+#include "ulcdgui/misc/drawable.h"
 
 class Component : public Drawable {
 protected:

@@ -2,7 +2,7 @@
 #define DEVICE_H
 
 #include <ulcd_driver.h>
-#include "ulcdgui/guiexception.h"
+#include "ulcdgui/misc/guiexception.h"
 #include "ulcdgui/rendering/surface.h"
 
 class GuiEvent;

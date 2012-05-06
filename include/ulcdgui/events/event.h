@@ -1,7 +1,7 @@
 #ifndef EVENT_H
 #define EVENT_H
 
-#include "ulcdgui/guiobject.h"
+#include "ulcdgui/misc/guiobject.h"
 
 enum EventType {
     EVENT_PRESS,

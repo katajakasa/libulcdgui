@@ -2,7 +2,7 @@
 #include "ulcdgui/sizers/hsizer.h"
 #include "ulcdgui/rendering/surface.h"
 #include "ulcdgui/events/event.h"
-#include "ulcdgui/guiobject.h"
+#include "ulcdgui/misc/guiobject.h"
 #include "ulcdgui/components/component.h"
 
 void HSizer::draw(Surface *s) {

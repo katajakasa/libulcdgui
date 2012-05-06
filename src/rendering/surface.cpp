@@ -1,5 +1,5 @@
 #include "ulcdgui/rendering/surface.h"
-#include "ulcdgui/guiexception.h"
+#include "ulcdgui/misc/guiexception.h"
 #include <cstring>
 #include <cstdio>
 
