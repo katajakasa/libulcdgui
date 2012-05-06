@@ -10,9 +10,15 @@ License
 -------
 MIT. Read LICENSE for more detailed information.
 
+Todo
+----
+* Documentation :)
+* Decorators. Eg. Button could ask ButtonDecorator how it should draw itself. The decorator could either draw primitives or eg. load SVG and draw that.
+* Cache. The device can save areas of screen as files and load them. Would be nice to cache the complex stuff and then quickly load if from SD.
+* Layout(). A Function that would go through the component three and precalculate the sizes for all components, also taking into account the min_size and max_size.
+
 Example
 -------
-
     #include <string>
     #include <iostream>
 
