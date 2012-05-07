@@ -5,8 +5,6 @@
 #include "ulcdgui/misc/guiobject.h"
 #include "ulcdgui/components/component.h"
 
-#include <iostream>
-
 void VSizer::draw(Surface *s) {
     if(!this->refresh) return;
     this->refresh = false;
@@ -67,7 +65,6 @@ void VSizer::precalc_layout(int x, int y) {
                 }
                 if(obj->getMinH() > v) {
                     obj->setSize(w, obj->getMinH());
-                    std::cout << ":: " << obj->getH() << std::endl;
                 }
                 else if(obj->getMaxH() < v) {
                     obj->setSize(w, obj->getMaxH());

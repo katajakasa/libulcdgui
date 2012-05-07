@@ -5,8 +5,6 @@
 #include "ulcdgui/misc/guiobject.h"
 #include "ulcdgui/components/component.h"
 
-#include <iostream>
-
 void HSizer::draw(Surface *s) {
     if(!this->refresh) return;
     this->refresh = false;
