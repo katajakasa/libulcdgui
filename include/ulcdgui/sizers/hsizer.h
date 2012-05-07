@@ -12,6 +12,7 @@ public:
 
     void draw(Surface *s);
     void handle_event(GuiEvent *ev);
+    void precalc_layout(int x, int y);
 };
 
 #endif

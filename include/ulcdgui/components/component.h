@@ -10,6 +10,9 @@ protected:
 public:
     Component();
 
+    // Components don't need this ...
+    void precalc_layout(int x, int y) {}
+
     void setUserData(void *data);
     void* getUserData();
 };

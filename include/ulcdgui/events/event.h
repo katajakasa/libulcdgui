@@ -13,11 +13,11 @@ enum EventType {
 class GuiEvent {
 public:
     EventType type;
-    int global_x, global_y;
-    int local_x, local_y;
+    unsigned int global_x, global_y;
+    unsigned int local_x, local_y;
     GuiObject *emitter;
 
-    void setParams(GuiObject *emitter, int offset_x, int offset_y) {
+    void setParams(GuiObject *emitter, unsigned int offset_x, unsigned int offset_y) {
         this->local_x -= offset_x;
         this->local_y -= offset_y;
         this->emitter = emitter;

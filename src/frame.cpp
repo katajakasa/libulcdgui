@@ -38,6 +38,13 @@ void Frame::setBaseSizer(Sizer *sizer) {
     this->base_sizer->setParent(this);
 }
 
-void Frame::update() {
+void Frame::update() {}
 
+void Frame::layout() {
+    if(this->base_sizer) {
+        Surface *s = this->device->getSurface();
+        this->base_sizer->setSize(s->w, s->h);
+        this->base_sizer->precalc_layout(0, 0);
+        delete s;
+    }
 }

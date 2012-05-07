@@ -98,7 +98,7 @@ void Slider::handle_event(GuiEvent *ev) {
     }
 
     // Handle slider moving event
-    int sbr = 8;
+    unsigned int sbr = 8;
     if(ev->type == EVENT_MOVING || ev->type == EVENT_PRESS) {
         if(an == ALIGN_HORIZONTAL) {
             if(ev->local_x < sbr) {

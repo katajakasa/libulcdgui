@@ -2,6 +2,7 @@
 #define DRAWABLE_H
 
 #include "ulcdgui/misc/guiobject.h"
+#include <climits>
 
 class Surface;
 class GuiEvent;
@@ -24,18 +25,18 @@ class Drawable : public GuiObject {
     friend class Sizer;
 
 protected:
-    int min_w, min_h;
-    int max_w, max_h;
-    int w, h;
+    unsigned int min_w, min_h;
+    unsigned int max_w, max_h;
+    unsigned int w, h;
     Alignment align;
     Expansiveness exp;
     unsigned int margin;
 
 public:
     Drawable() : GuiObject() {
-        w = h = -1;
-        min_w = max_w = -1;
-        min_h = max_h = -1;
+        w = h = 0;
+        min_w = min_h = 0;
+        max_w = max_h = INT_MAX;
         align = ALIGN_AUTO;
         exp = EXPAND_ALL;
         margin = 2;
@@ -43,22 +44,24 @@ public:
 
     virtual void draw(Surface *s) = 0;
     virtual void handle_event(GuiEvent *ev) = 0;
+    virtual void precalc_layout(int x, int y) = 0;
 
     // TODO: IMPLEMENT THESE IN COMPONENTS/SIZERS!
     void setMargin(unsigned int margin) { this->margin = margin; }
     void setAlignment(Alignment align) { this->align = align; }
     void setExpansiveness(Expansiveness exp) { this->exp = exp; }
-    void setMinimumSize(int w, int h) { this->min_w = w; this->min_h = w; }
-    void setMaximumSize(int w, int h) { this->max_w = w; this->max_h = h; }
+    void setMinimumSize(unsigned int w, unsigned int h) { this->min_w = w; this->min_h = w; }
+    void setMaximumSize(unsigned int w, unsigned int h) { this->max_w = w; this->max_h = h; }
+    void setSize(unsigned int w, unsigned int h) { this->w = w; this->h = h; }
     unsigned int getMargin() { return this->margin; }
     Alignment getAlignment() { return this->align; }
     Expansiveness getExpansiveness() { return this->exp; }
-    int getMinW() { return this->min_w; }
-    int getMinH() { return this->min_h; }
-    int getMaxW() { return this->max_w; }
-    int getMaxH() { return this->max_h; }
-    int getW() { return this->w; }
-    int getH() { return this->h; }
+    unsigned int getMinW() { return this->min_w; }
+    unsigned int getMinH() { return this->min_h; }
+    unsigned int getMaxW() { return this->max_w; }
+    unsigned int getMaxH() { return this->max_h; }
+    unsigned int getW() { return this->w; }
+    unsigned int getH() { return this->h; }
 };
 
 #endif

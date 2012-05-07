@@ -17,8 +17,6 @@ Todo
   The decorator could either draw primitives or eg. load SVG and draw that.
 * Cache. The device can save areas of screen as files and load them. 
   Would be nice to cache the complex stuff and then quickly load if from SD.
-* Layout(). A Function that would go through the component three and precalculate 
-  the sizes for all components, also taking into account the min_size and max_size.
 * Some sort of draw buffer. Since the device has some sort of receive buffer, 
   we could try to keep that filled with stuff to do. ATM the library just 
   performs an operation and then waits for an ACK.
