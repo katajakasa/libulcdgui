@@ -37,11 +37,23 @@ void HSizer::handle_event(GuiEvent *ev) {
 }
 
 void HSizer::precalc_layout(int x, int y) {
-    int med = w / this->objects.size();
-    unsigned int req_pixels = 0;
+    unsigned int med = w / this->objects.size();
+    int tw = w;
+    int tc = this->objects.size();
+    for(Drawable *obj : this->objects) {
+        if(obj->getMaxW() < med) {
+            tw -= obj->getMaxW();
+            tc--;
+        }
+    }
+    if(tc > 0) {
+        med = tw / tc;
+    }
 
     // Try to disable min or max from elements at the back of the list if necessary
     bool run = true;
+    unsigned int req_pixels = 0;
+    unsigned int last_req = 0;
     for(unsigned int t = this->objects.size(); t > 0 && run; t--) {
         // Try to make medium lower for elements that have no min or max
         for(unsigned int v = med; v > 0 && run; v--) {
@@ -64,6 +76,13 @@ void HSizer::precalc_layout(int x, int y) {
                 }
                 req_pixels += obj->getW();
             }
+
+            // If there was no change to the previous run, just break the pixel test loop
+            // and try disabling min & max testing from more elements
+            if(last_req == req_pixels) {
+                break;
+            }
+            last_req = req_pixels;
 
             // Check if we could fit it all into the sizer
             if(req_pixels <= w) {

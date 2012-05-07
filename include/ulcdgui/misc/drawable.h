@@ -50,8 +50,8 @@ public:
     void setMargin(unsigned int margin) { this->margin = margin; }
     void setAlignment(Alignment align) { this->align = align; }
     void setExpansiveness(Expansiveness exp) { this->exp = exp; }
-    void setMinimumSize(unsigned int w, unsigned int h) { this->min_w = w; this->min_h = w; }
-    void setMaximumSize(unsigned int w, unsigned int h) { this->max_w = w; this->max_h = h; }
+    void setMinSize(unsigned int w, unsigned int h) { this->min_w = w; this->min_h = w; }
+    void setMaxSize(unsigned int w, unsigned int h) { this->max_w = w; this->max_h = h; }
     void setSize(unsigned int w, unsigned int h) { this->w = w; this->h = h; }
     unsigned int getMargin() { return this->margin; }
     Alignment getAlignment() { return this->align; }
